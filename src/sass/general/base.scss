@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: $main;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 28px;
+}
+a{
+    color: $main;
+    text-decoration: none;
+    &:hover{
+        color: $active;
+    }
+}
+.active{
+    color: $active;
+    font-weight: bold;
+}
+.container{
+    max-width: 1800px;
+    margin: 0 auto;
+}
+.container2{
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.header{
+    min-height: 120px;
+    &-logo{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $active;
+    }
+    &-nav{
+        a{
+            margin-right: 42px;
+        }
+    }
+    &-social{
+        text-align: right;
+        a{
+            margin-right: 50px;
+        }
+    }
+}
+.slider{
+    background: linear-gradient(180deg, #F4F7FF 0%, #F1F5FF 100%); 
+    border-top: 1px solid #D8E3FE;
+    border-bottom: 1px solid #D8E3FE;
+    padding-top: 90px;
+}
+.bg{
+    background: url(../../img/bg-slider.png) no-repeat top 105px right;
+    background-size: cover;
+    width: 100%;
+    min-height: 600px;
+}
+.partners-img{
+    justify-content: space-between;
+    padding: 58px 0;
+}
+.title{
+    text-transform: uppercase;
+    color: $title;
+    font-size: 10px;
+}
+h1{  
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 60px;
+    text-align: center;
+    color: $title;
+}
+h2{
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 45px;
+    color: $title;
+}
+.info{
+    background: #F5F8FF;
+    border-top: 1px solid #D8E3FE;
+    border-bottom: 1px solid #D8E3FE;
+    position: relative;
+    &_text{
+        width: 40%; 
+    }
+    .bg-img{
+        position: absolute;
+        top: 220px;
+        right: 160px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // сколько блоков строке должно быть и их ширина
+    grid-column-gap: 1em; //отступы по вертикали
+    grid-row-gap: 1em;
+    grid-auto-rows: minmax(100px, auto);//минимальная и максим высота блоков
+}
+

@@ -1,0 +1,9 @@
+.grid{
+    display: grid;
+}
+.col-4{
+    grid-template-columns: 1fr 4fr 2fr 1fr;
+}
+.flex{
+    display: flex;
+}

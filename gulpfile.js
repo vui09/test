@@ -7,6 +7,7 @@ const sass = require("gulp-sass");
 const autoprefixer = require("autoprefixer");
 const cleanCSS = require("gulp-clean-css");
 const postcss = require("gulp-postcss");
+const imagemin = require('gulp-imagemin');
 
 // const dist = "/Applications/MAMP/htdocs/test"; // Ссылка на вашу папку на локальном сервере
 const dist = "./dist";
@@ -56,6 +57,14 @@ gulp.task("build-js", () => {
                 .on("end", browsersync.reload);
 });
 
+
+gulp.task('compress', function() {
+  gulp.src('./src/img/**/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('dist/img'))
+});
+
+
 gulp.task("watch", () => {
     browsersync.init({
 		server: "./dist/",
@@ -68,7 +77,7 @@ gulp.task("watch", () => {
     gulp.watch("./src/sass/**/*.scss", gulp.parallel("build-sass"));
 });
 
-gulp.task("build", gulp.parallel("copy-html", "build-js", "build-sass"));
+gulp.task("build", gulp.parallel("copy-html", "build-js", "build-sass", "compress"));
 
 gulp.task("prod", () => {
     gulp.src("./src/sass/style.scss")
@@ -103,5 +112,6 @@ gulp.task("prod", () => {
                 }))
                 .pipe(gulp.dest(dist));
 });
+
 
 gulp.task("default", gulp.parallel("watch", "build"));
